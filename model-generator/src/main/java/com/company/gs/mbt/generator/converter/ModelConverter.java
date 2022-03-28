@@ -15,12 +15,12 @@ public class ModelConverter {
         System.out.println(toJson(ForgottenPasswordModelGenerator.generate()));
     }
 
-    public static JSONObject toJson(List<Action> graphWalkerActions) {
+    public static JSONArray toJson(List<Action> graphWalkerActions) {
         JSONArray actions = new JSONArray();
         for (Action action : graphWalkerActions) {
             actions.put(action.getScript());
         }
-        return new JSONObject().put("actions", actions);
+        return actions.isEmpty() ? null : actions;
     }
 
     public static JSONObject toJson(Edge edge) {
@@ -30,7 +30,7 @@ public class ModelConverter {
             .put("sourceVertexId", edge.getSourceVertex().getId())
             .put("targetVertexId", edge.getTargetVertex().getId())
             .put("actions", toJson(edge.getActions()))
-            .put("guard", edge.getGuard());
+            .put("guard", edge.getGuard() != null ? edge.getGuard().getScript() : null);
     }
 
     public static JSONObject toJson(Vertex vertex) {
@@ -39,31 +39,39 @@ public class ModelConverter {
             .put("name", vertex.getName());
     }
 
-    public static JSONObject toJson(Model graphWalkerModel) {
+    public static JSONObject toJson(Model gwModel) {
         JSONArray edges = new JSONArray();
-        for (Edge edge : graphWalkerModel.getEdges()) {
+        for (Edge edge : gwModel.getEdges()) {
             edges.put(toJson(edge));
         }
 
         JSONArray vertices = new JSONArray();
-        for (Vertex vertex : graphWalkerModel.getVertices()) {
+        for (Vertex vertex : gwModel.getVertices()) {
             vertices.put(toJson(vertex));
         }
 
-        JSONArray actions = new JSONArray()
-            .put(toJson(graphWalkerModel.getActions()));
-
         JSONObject model = new JSONObject()
-            .put("actions", actions)
+            .put("actions", toJson(gwModel.getActions()))
             .put("edges", edges)
             .put("generator", "quick_random(edge_coverage(100))")
-            .put("id", graphWalkerModel.getId())
-            .put("name", graphWalkerModel.getName())
-            .put("startElementId", graphWalkerModel.getVertices().get(0).getId())
+            .put("id", gwModel.getId())
+            .put("name", gwModel.getName())
+            .put("startElementId", gwModel.getVertices().get(0).getId())
             .put("vertices", vertices);
 
         return new JSONObject().put("models", new JSONArray().put(model))
-            .put("selectedElementId", graphWalkerModel.getVertices().get(0))
+            .put("selectedElementId", gwModel.getVertices().get(0).getId())
+            .put("selectedModelIndex", 0);
+    }
+
+    public static JSONObject toJson(Model... gwModels) {
+        JSONArray models = new JSONArray();
+        for (Model model : gwModels) {
+            models.put(toJson(model));
+        }
+
+        return new JSONObject().put("models", models)
+            .put("selectedElementId", gwModels[0].getVertices().get(0).getId())
             .put("selectedModelIndex", 0);
     }
 

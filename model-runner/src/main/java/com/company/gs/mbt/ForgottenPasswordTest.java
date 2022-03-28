@@ -47,9 +47,7 @@ public class ForgottenPasswordTest extends ExecutionContext implements Forgotten
 
     @Override
     public void e_fillFPForm() {
-        if (WebDriverUtil.isEmptyById(driver, WebElementId.FORGOTTEN_PASSWORD_MODAL_EMAIL_INPUT)) {
-            WebDriverUtil.typeById(driver, WebElementId.FORGOTTEN_PASSWORD_MODAL_EMAIL_INPUT, InputExamples.VALID_EMAIL);
-        }
+        WebDriverUtil.typeById(driver, WebElementId.FORGOTTEN_PASSWORD_MODAL_EMAIL_INPUT, InputExamples.VALID_EMAIL);
     }
 
     @Override

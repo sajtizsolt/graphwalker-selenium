@@ -38,7 +38,8 @@ public class ForgottenPasswordModelGenerator {
             .setId(UUID.randomUUID().toString())
             .setName("e_clickOnFPLink")
             .setSourceVertex(v_onLoginPage)
-            .setTargetVertex(v_onFPModal);
+            .setTargetVertex(v_onFPModal)
+            .addAction(clearFPForm);
 
         Edge e_closeFPModal = new Edge()
             .setId(UUID.randomUUID().toString())

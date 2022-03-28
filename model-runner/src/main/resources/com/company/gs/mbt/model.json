@@ -1,84 +1,75 @@
 {
   "models": [
     {
+      "vertices": [
+        {
+          "name": "v_browserNotRunning",
+          "id": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8"
+        },
+        {
+          "name": "v_onLoginPage",
+          "id": "3d2c408d-86d6-4274-911b-7f41c31e7373"
+        },
+        {
+          "name": "v_onFPModal",
+          "id": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+        }
+      ],
       "edges": [
         {
-          "id": "15a97460-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373",
           "name": "e_startBrowserAndGoToLoginPage",
-          "sourceVertexId": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9",
-          "targetVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9"
+          "id": "3a7ee1ff-7619-4336-9706-f8992e1aab46",
+          "sourceVertexId": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8"
         },
         {
-          "id": "1e3b35f0-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6",
           "name": "e_clickOnFPLink",
-          "sourceVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
-          "targetVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9"
-        },
-        {
-          "id": "24f1cee0-aec5-11ec-bb19-a7d9fe38aed9",
-          "name": "e_closeFPModal",
-          "sourceVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
-          "targetVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
-          "actions": [
-            "fpFormFilled = false;"
-          ]
-        },
-        {
-          "id": "3bba53e0-aec5-11ec-bb19-a7d9fe38aed9",
-          "name": "e_submitFPForm",
-          "sourceVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
-          "targetVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
+          "id": "138a3888-47ba-4215-ba6d-1fdd2f1e7e97",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "guard": "fpFormFilled == true"
+          "sourceVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373"
         },
         {
-          "id": "55ce5a60-aec5-11ec-bb19-a7d9fe38aed9",
-          "name": "e_fillFPForm",
-          "sourceVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
-          "targetVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373",
+          "name": "e_closeFPModal",
+          "id": "0a5405d6-1d0a-4fb0-8e2a-3d5fdc164086",
+          "actions": [
+            "fpFormFilled = false;"
+          ],
+          "sourceVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+        },
+        {
+          "targetVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373",
+          "guard": "fpFormFilled == true",
+          "name": "e_submitFPForm",
+          "id": "15b717ba-ad6b-4605-b66c-3bae90733d09",
+          "actions": [
+            "fpFormFilled = false;"
+          ],
+          "sourceVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+        },
+        {
+          "targetVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6",
           "guard": "fpFormFilled == false",
+          "name": "e_fillFPForm",
+          "id": "c09f0eb1-d65c-4dc3-ac4d-f01fb5dd3523",
           "actions": [
             "fpFormFilled = true;"
-          ]
+          ],
+          "sourceVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
         }
       ],
-      "generator": "random(edge_coverage(100))",
-      "id": "e23c2be0-aec4-11ec-bb19-a7d9fe38aed9",
       "name": "ForgottenPassword",
-      "startElementId": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9",
-      "vertices": [
-        {
-          "id": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9",
-          "name": "v_browserNotRunning",
-          "properties": {
-            "x": 224,
-            "y": 129
-          }
-        },
-        {
-          "id": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
-          "name": "v_onLoginPage",
-          "properties": {
-            "x": 218,
-            "y": 337
-          }
-        },
-        {
-          "id": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
-          "name": "v_onFPModal",
-          "properties": {
-            "x": 207,
-            "y": 530
-          }
-        }
-      ],
+      "generator": "quick_random(edge_coverage(100))",
+      "id": "234eec1a-9e23-4ce7-b251-13ef242dd7a7",
       "actions": [
         "fpFormFilled = false;"
-      ]
+      ],
+      "startElementId": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8"
     }
   ],
-  "selectedModelIndex": 0,
-  "selectedElementId": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9"
+  "selectedElementId": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8",
+  "selectedModelIndex": 0
 }

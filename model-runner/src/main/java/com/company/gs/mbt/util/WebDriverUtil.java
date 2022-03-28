@@ -146,6 +146,7 @@ public class WebDriverUtil {
      * @param text   The text to be typed.
      */
     public static void typeById(WebDriver driver, String id, String text) {
+        waitForClickableById(driver, 5, id);
         waitForPresenceById(driver, 5, id);
         driver.findElement(By.id(id)).sendKeys(text);
     }
@@ -159,6 +160,7 @@ public class WebDriverUtil {
      * @param text   The text to be typed.
      */
     public static void typeByXPath(WebDriver driver, String xpath, String text) {
+        waitForClickableByXPath(driver, 5, xpath);
         waitForPresenceByXPath(driver, 5, xpath);
         driver.findElement(By.xpath(xpath)).sendKeys(text);
     }
