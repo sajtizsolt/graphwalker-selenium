@@ -1,1 +1,84 @@
-{"models":[{"edges":[{"id":"15a97460-aec5-11ec-bb19-a7d9fe38aed9","name":"e_startBrowserAndGoToLoginPage","sourceVertexId":"f04fafe0-aec4-11ec-bb19-a7d9fe38aed9","targetVertexId":"0b83cc60-aec5-11ec-bb19-a7d9fe38aed9"},{"id":"1e3b35f0-aec5-11ec-bb19-a7d9fe38aed9","name":"e_clickOnFPLink","sourceVertexId":"0b83cc60-aec5-11ec-bb19-a7d9fe38aed9","targetVertexId":"0fc98c60-aec5-11ec-bb19-a7d9fe38aed9"},{"id":"24f1cee0-aec5-11ec-bb19-a7d9fe38aed9","name":"e_closeFPModal","sourceVertexId":"0fc98c60-aec5-11ec-bb19-a7d9fe38aed9","targetVertexId":"0b83cc60-aec5-11ec-bb19-a7d9fe38aed9","actions":["fpFormFilled = false;"]},{"id":"3bba53e0-aec5-11ec-bb19-a7d9fe38aed9","name":"e_submitFPForm","sourceVertexId":"0fc98c60-aec5-11ec-bb19-a7d9fe38aed9","targetVertexId":"0b83cc60-aec5-11ec-bb19-a7d9fe38aed9","actions":["fpFormFilled = false;"],"guard":"fpFormFilled == true"},{"id":"55ce5a60-aec5-11ec-bb19-a7d9fe38aed9","name":"e_fillFPForm","sourceVertexId":"0fc98c60-aec5-11ec-bb19-a7d9fe38aed9","targetVertexId":"0fc98c60-aec5-11ec-bb19-a7d9fe38aed9","guard":"fpFormFilled == false","actions":["fpFormFilled = true;"]}],"generator":"random(edge_coverage(100))","id":"e23c2be0-aec4-11ec-bb19-a7d9fe38aed9","name":"ForgottenPassword","startElementId":"f04fafe0-aec4-11ec-bb19-a7d9fe38aed9","vertices":[{"id":"f04fafe0-aec4-11ec-bb19-a7d9fe38aed9","name":"v_browserNotRunning","properties":{"x":224,"y":129}},{"id":"0b83cc60-aec5-11ec-bb19-a7d9fe38aed9","name":"v_onLoginPage","properties":{"x":218,"y":337}},{"id":"0fc98c60-aec5-11ec-bb19-a7d9fe38aed9","name":"v_onFPModal","properties":{"x":207,"y":530}}],"actions":["fpFormFilled = false;"]}],"selectedModelIndex":0,"selectedElementId":"f04fafe0-aec4-11ec-bb19-a7d9fe38aed9"}
+{
+  "models": [
+    {
+      "edges": [
+        {
+          "id": "15a97460-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "e_startBrowserAndGoToLoginPage",
+          "sourceVertexId": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9"
+        },
+        {
+          "id": "1e3b35f0-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "e_clickOnFPLink",
+          "sourceVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9"
+        },
+        {
+          "id": "24f1cee0-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "e_closeFPModal",
+          "sourceVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
+          "actions": [
+            "fpFormFilled = false;"
+          ]
+        },
+        {
+          "id": "3bba53e0-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "e_submitFPForm",
+          "sourceVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
+          "actions": [
+            "fpFormFilled = false;"
+          ],
+          "guard": "fpFormFilled == true"
+        },
+        {
+          "id": "55ce5a60-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "e_fillFPForm",
+          "sourceVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
+          "targetVertexId": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
+          "guard": "fpFormFilled == false",
+          "actions": [
+            "fpFormFilled = true;"
+          ]
+        }
+      ],
+      "generator": "random(edge_coverage(100))",
+      "id": "e23c2be0-aec4-11ec-bb19-a7d9fe38aed9",
+      "name": "ForgottenPassword",
+      "startElementId": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9",
+      "vertices": [
+        {
+          "id": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9",
+          "name": "v_browserNotRunning",
+          "properties": {
+            "x": 224,
+            "y": 129
+          }
+        },
+        {
+          "id": "0b83cc60-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "v_onLoginPage",
+          "properties": {
+            "x": 218,
+            "y": 337
+          }
+        },
+        {
+          "id": "0fc98c60-aec5-11ec-bb19-a7d9fe38aed9",
+          "name": "v_onFPModal",
+          "properties": {
+            "x": 207,
+            "y": 530
+          }
+        }
+      ],
+      "actions": [
+        "fpFormFilled = false;"
+      ]
+    }
+  ],
+  "selectedModelIndex": 0,
+  "selectedElementId": "f04fafe0-aec4-11ec-bb19-a7d9fe38aed9"
+}
