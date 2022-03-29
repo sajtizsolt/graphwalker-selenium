@@ -1,4 +1,4 @@
-package com.company.gs.mbt.generator;
+package com.company.gs.mbt.generator.model;
 
 import java.util.UUID;
 import org.graphwalker.core.model.Action;

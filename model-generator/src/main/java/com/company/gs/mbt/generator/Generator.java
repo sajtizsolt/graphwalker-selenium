@@ -1,6 +1,7 @@
 package com.company.gs.mbt.generator;
 
 import com.company.gs.mbt.generator.converter.ModelConverter;
+import com.company.gs.mbt.generator.model.ComplexModelGenerator;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

@@ -32,6 +32,7 @@ public class ComplexTest extends ExecutionContext implements Complex {
     @Override
     public void v_onLoginPage() {
         WebDriverUtil.waitForUrl(driver, 5, WebPageUrl.LOGIN_PAGE);
+
         assertEquals(WebPageUrl.LOGIN_PAGE, driver.getCurrentUrl());
         assertTrue(WebDriverUtil.isAntTabActive(driver, WebElementXPath.LOGIN_TAB));
     }
@@ -86,6 +87,7 @@ public class ComplexTest extends ExecutionContext implements Complex {
     @Override
     public void v_onFilePage() {
         WebDriverUtil.waitForUrl(driver, 5, WebPageUrl.FILE_PAGE);
+
         assertEquals(WebPageUrl.FILE_PAGE, driver.getCurrentUrl());
         assertTrue(WebDriverUtil.existsById(driver, WebElementId.FILE_PAGE_NEW_BUTTON));
     }
@@ -104,6 +106,7 @@ public class ComplexTest extends ExecutionContext implements Complex {
     @Override
     public void v_onSigningProcessesPage() {
         WebDriverUtil.waitForUrl(driver, 5, WebPageUrl.SIGNING_PROCESSES_PAGE);
+
         assertEquals(WebPageUrl.SIGNING_PROCESSES_PAGE, driver.getCurrentUrl());
         assertTrue(WebDriverUtil.existsById(driver, WebElementId.SIGNING_PROCESSES_TO_FILE_PAGE_BUTTON));
     }
@@ -117,6 +120,7 @@ public class ComplexTest extends ExecutionContext implements Complex {
     @Override
     public void v_onSettingsPage() {
         WebDriverUtil.waitForUrl(driver, 5, WebPageUrl.SETTINGS_PAGE);
+
         assertEquals(WebPageUrl.SETTINGS_PAGE, driver.getCurrentUrl());
         assertTrue(WebDriverUtil.existsById(driver, WebElementId.SETTINGS_TO_FILE_PAGE_BUTTON));
     }
@@ -130,6 +134,7 @@ public class ComplexTest extends ExecutionContext implements Complex {
     @Override
     public void v_onSigningMultipleFilesPage() {
         WebDriverUtil.waitForUrl(driver, 5, WebPageUrl.SIGNING_MULTIPLE_FILES_PAGE);
+
         assertEquals(WebPageUrl.SIGNING_MULTIPLE_FILES_PAGE, driver.getCurrentUrl());
         assertTrue(WebDriverUtil.existsById(driver, WebElementId.SIGNING_MULTIPLE_FILES_TO_FILE_PAGE_BUTTON));
     }

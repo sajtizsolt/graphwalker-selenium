@@ -1,4 +1,4 @@
-package com.company.gs.mbt.generator;
+package com.company.gs.mbt.generator.util;
 
 import org.graphwalker.core.model.Guard;
 

@@ -1,5 +1,6 @@
-package com.company.gs.mbt.generator;
+package com.company.gs.mbt.generator.model;
 
+import com.company.gs.mbt.generator.util.ModelGeneratorUtil;
 import java.util.UUID;
 import org.graphwalker.core.model.Action;
 import org.graphwalker.core.model.Edge;
