@@ -1,6 +1,6 @@
 package com.company.gs.mbt.generator.converter;
 
-import com.company.gs.mbt.generator.ForgottenPasswordModelGenerator;
+import com.company.gs.mbt.generator.ComplexModelGenerator;
 import java.util.List;
 import org.graphwalker.core.model.Action;
 import org.graphwalker.core.model.Edge;
@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public class ModelConverter {
 
     public static void main(String... arguments) {
-        System.out.println(toJson(ForgottenPasswordModelGenerator.generate()));
+        System.out.println(toJson(ComplexModelGenerator.generate()));
     }
 
     public static JSONArray toJson(List<Action> graphWalkerActions) {
