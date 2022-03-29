@@ -4,72 +4,72 @@
       "vertices": [
         {
           "name": "v_browserNotRunning",
-          "id": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8"
+          "id": "fec2ebdf-51ed-4d67-9ad1-6c92411c4527"
         },
         {
           "name": "v_onLoginPage",
-          "id": "3d2c408d-86d6-4274-911b-7f41c31e7373"
+          "id": "fe6d9314-6e06-4bc5-a9ba-029abc1348f8"
         },
         {
           "name": "v_onFPModal",
-          "id": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+          "id": "91e7bf97-7ad2-4f3a-a272-5c71c31299af"
         }
       ],
       "edges": [
         {
-          "targetVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373",
+          "targetVertexId": "fe6d9314-6e06-4bc5-a9ba-029abc1348f8",
           "name": "e_startBrowserAndGoToLoginPage",
-          "id": "3a7ee1ff-7619-4336-9706-f8992e1aab46",
-          "sourceVertexId": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8"
+          "id": "7e226fd4-bf0c-4176-a78b-f99b1c0ddb08",
+          "sourceVertexId": "fec2ebdf-51ed-4d67-9ad1-6c92411c4527"
         },
         {
-          "targetVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6",
+          "targetVertexId": "91e7bf97-7ad2-4f3a-a272-5c71c31299af",
           "name": "e_clickOnFPLink",
-          "id": "138a3888-47ba-4215-ba6d-1fdd2f1e7e97",
+          "id": "d6a7a4b6-0e0d-48b8-8818-1a9d9f787e17",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "sourceVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373"
+          "sourceVertexId": "fe6d9314-6e06-4bc5-a9ba-029abc1348f8"
         },
         {
-          "targetVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373",
+          "targetVertexId": "fe6d9314-6e06-4bc5-a9ba-029abc1348f8",
           "name": "e_closeFPModal",
-          "id": "0a5405d6-1d0a-4fb0-8e2a-3d5fdc164086",
+          "id": "ba350dc1-411d-44c5-83e3-8d440f7633f1",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "sourceVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+          "sourceVertexId": "91e7bf97-7ad2-4f3a-a272-5c71c31299af"
         },
         {
-          "targetVertexId": "3d2c408d-86d6-4274-911b-7f41c31e7373",
+          "targetVertexId": "fe6d9314-6e06-4bc5-a9ba-029abc1348f8",
           "guard": "fpFormFilled == true",
           "name": "e_submitFPForm",
-          "id": "15b717ba-ad6b-4605-b66c-3bae90733d09",
+          "id": "9dacd73e-7d60-4cc9-ac2c-c316cb0e4c67",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "sourceVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+          "sourceVertexId": "91e7bf97-7ad2-4f3a-a272-5c71c31299af"
         },
         {
-          "targetVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6",
+          "targetVertexId": "91e7bf97-7ad2-4f3a-a272-5c71c31299af",
           "guard": "fpFormFilled == false",
           "name": "e_fillFPForm",
-          "id": "c09f0eb1-d65c-4dc3-ac4d-f01fb5dd3523",
+          "id": "d3992dc9-d379-4b35-ade2-fc8e06289149",
           "actions": [
             "fpFormFilled = true;"
           ],
-          "sourceVertexId": "636dc1bf-0bc9-443e-9dad-4b72181472a6"
+          "sourceVertexId": "91e7bf97-7ad2-4f3a-a272-5c71c31299af"
         }
       ],
       "name": "ForgottenPassword",
       "generator": "quick_random(edge_coverage(100))",
-      "id": "234eec1a-9e23-4ce7-b251-13ef242dd7a7",
+      "id": "904809e8-e5e2-47f1-a721-043bab48a518",
       "actions": [
         "fpFormFilled = false;"
       ],
-      "startElementId": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8"
+      "startElementId": "fec2ebdf-51ed-4d67-9ad1-6c92411c4527"
     }
   ],
-  "selectedElementId": "8ddfc14f-79f7-49a8-8978-cfa0e1ae48a8",
+  "selectedElementId": "fec2ebdf-51ed-4d67-9ad1-6c92411c4527",
   "selectedModelIndex": 0
 }
