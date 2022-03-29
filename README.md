@@ -1,4 +1,4 @@
-# Model-based testing on web-Szignó
+# Model-based testing on modern web applications
 
 In this project I will try out the model-based testing capabilities
 of [GraphWalker](https://graphwalker.github.io/)
