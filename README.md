@@ -26,7 +26,45 @@ These properties are important, because with the help of these, Selenium will fi
 Here is a list of properties you have to define:
 
 ```properties
+# HTML class names
+className.modal.close=
+className.modal.root=
+className.tab.active=
 
+# HTML element IDs
+id.logo=
+id.modal.forgottenPassword.email=
+id.modal.forgottenPassword.submit=
+id.modal.notifyUser.checkbox=
+id.modal.notifyUser.submit=
+id.page.file.new.container=
+id.page.login.forgottenPassword=
+id.page.login.email=
+id.page.login.password=
+id.page.login.submit=
+id.page.settings.back=
+id.page.signingMultipleFiles.back=
+id.page.signingProcesses.back=
+id.menu.user=
+id.menu.user.logout=
+id.menu.user.settings=
+id.menu.user.signingMultipleFiles=
+id.menu.user.signingProcesses=
+
+# XPath routes
+xpath.modal.close=
+xpath.page.login.loginTab=
+
+# URLs
+url.file=
+url.login=
+url.settings=
+url.signingMultipleFiles=
+url.signingProcesses=
+
+# Data
+data.user.email=
+data.user.password=
 ```
 
 ### Executing with Maven
