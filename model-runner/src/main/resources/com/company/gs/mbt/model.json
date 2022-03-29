@@ -4,175 +4,175 @@
       "vertices": [
         {
           "name": "v_browserNotRunning",
-          "id": "f5ff0027-2039-4e91-8b70-0a2be603a411"
+          "id": "d0173f18-adb0-46b1-bacb-e3a0c1e7cd5f"
         },
         {
           "name": "v_onLoginPage",
-          "id": "955725c0-f403-4abd-b4fc-0c88d41f6681"
+          "id": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc"
         },
         {
           "name": "v_onFPModal",
-          "id": "486d40e9-eca4-42ea-b360-8e04eff1c240"
+          "id": "516ff6ce-e32b-41c0-ad24-5f43d3f4a25e"
         },
         {
           "name": "v_onNotifyUserModal",
-          "id": "d091fbf4-e9e4-40c3-8db6-41ae347644c3"
+          "id": "5374daa0-3aa5-4268-889f-ed5f07a06aaf"
         },
         {
           "name": "v_onFilePage",
-          "id": "5de35afd-5b3e-4328-8dd8-e214fef21c42"
+          "id": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9"
         },
         {
           "name": "v_onSettingsPage",
-          "id": "9f01cc69-17a8-467e-955a-fcb02af6c83c"
+          "id": "ade9e283-07fb-4868-83d5-accf00013b92"
         },
         {
           "name": "v_onSigningMultipleFilesPage",
-          "id": "20a8000a-9b57-4b9e-b847-ab29f04e7b02"
+          "id": "78704a7f-f934-42f7-947e-a7bca6233653"
         },
         {
           "name": "v_onSigningProcessesPage",
-          "id": "b5c16ae4-2f86-4a5e-97d4-cf843553e91b"
+          "id": "05d541d9-44bf-4985-8d66-16e84f3cd9d6"
         }
       ],
       "edges": [
         {
-          "targetVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681",
+          "targetVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc",
           "name": "e_startBrowserAndGoToLoginPage",
-          "id": "83735eb7-bfbc-4764-9459-264c561466ba",
-          "sourceVertexId": "f5ff0027-2039-4e91-8b70-0a2be603a411"
+          "id": "0be612cd-eb8e-4e24-9f44-d6b12eb15fd6",
+          "sourceVertexId": "d0173f18-adb0-46b1-bacb-e3a0c1e7cd5f"
         },
         {
-          "targetVertexId": "486d40e9-eca4-42ea-b360-8e04eff1c240",
+          "targetVertexId": "516ff6ce-e32b-41c0-ad24-5f43d3f4a25e",
           "name": "e_clickOnFPLink",
-          "id": "ba436856-d4ea-4a3c-aac5-fab5e4fc926c",
+          "id": "9ddd98b4-fd26-4465-aba0-0265b9b27878",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "sourceVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681"
+          "sourceVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc"
         },
         {
-          "targetVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681",
+          "targetVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc",
           "name": "e_closeFPModal",
-          "id": "a82a02d8-5645-4e71-8dbd-d65b204faa4a",
+          "id": "55d20776-f4c5-4c3c-819a-8bb62555a526",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "sourceVertexId": "486d40e9-eca4-42ea-b360-8e04eff1c240"
+          "sourceVertexId": "516ff6ce-e32b-41c0-ad24-5f43d3f4a25e"
         },
         {
-          "targetVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681",
+          "targetVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc",
           "guard": "fpFormFilled == true",
           "name": "e_submitFPForm",
-          "id": "6b5b9774-b3e3-4c41-9766-ad58d39de389",
+          "id": "80a6ebce-9193-4ebe-b61c-2b074261d789",
           "actions": [
             "fpFormFilled = false;"
           ],
-          "sourceVertexId": "486d40e9-eca4-42ea-b360-8e04eff1c240"
+          "sourceVertexId": "516ff6ce-e32b-41c0-ad24-5f43d3f4a25e"
         },
         {
-          "targetVertexId": "486d40e9-eca4-42ea-b360-8e04eff1c240",
+          "targetVertexId": "516ff6ce-e32b-41c0-ad24-5f43d3f4a25e",
           "guard": "fpFormFilled == false",
           "name": "e_fillFPForm",
-          "id": "f2859f8f-d699-4dc1-bcff-c94e6fbbff6a",
+          "id": "865a41f2-51b5-43b0-b713-dce609700181",
           "actions": [
             "fpFormFilled = true;"
           ],
-          "sourceVertexId": "486d40e9-eca4-42ea-b360-8e04eff1c240"
+          "sourceVertexId": "516ff6ce-e32b-41c0-ad24-5f43d3f4a25e"
         },
         {
-          "targetVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681",
+          "targetVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc",
           "guard": "loginFormFilled == false",
           "name": "e_fillLoginForm",
-          "id": "a74796da-601b-42ac-ace2-27814ec0c7f3",
+          "id": "66a8ebec-215b-420e-8c5a-b3866ced4223",
           "actions": [
             "loginFormFilled = true;"
           ],
-          "sourceVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681"
+          "sourceVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc"
         },
         {
-          "targetVertexId": "d091fbf4-e9e4-40c3-8db6-41ae347644c3",
+          "targetVertexId": "5374daa0-3aa5-4268-889f-ed5f07a06aaf",
           "guard": "(loginFormFilled == true) && (nuModalChecked == false) ",
           "name": "e_submitLoginForm",
-          "id": "157aa5af-8381-4c04-bf8e-c4a0f9d840ab",
+          "id": "d87a912c-3c68-48d9-babc-650dae51ffde",
           "actions": [
             "loginFormFilled = false;"
           ],
-          "sourceVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681"
+          "sourceVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc"
         },
         {
-          "targetVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42",
+          "targetVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9",
           "guard": "(loginFormFilled == true) && (nuModalChecked == true) ",
           "name": "e_submitLoginForm",
-          "id": "d74c5ce1-2e50-4a7f-a456-b1852639d70e",
+          "id": "9b72a851-119a-48e5-948d-2f1c77d32a28",
           "actions": [
             "loginFormFilled = false;"
           ],
-          "sourceVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681"
+          "sourceVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc"
         },
         {
-          "targetVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42",
+          "targetVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9",
           "name": "e_closeNotifyModal",
-          "id": "2c4dfe31-ec43-4751-984f-9249b29ecee7",
+          "id": "99d10120-e2b4-4a3d-81b2-a2583b502d57",
           "actions": [
             "nuModalChecked = true;"
           ],
-          "sourceVertexId": "d091fbf4-e9e4-40c3-8db6-41ae347644c3"
+          "sourceVertexId": "5374daa0-3aa5-4268-889f-ed5f07a06aaf"
         },
         {
-          "targetVertexId": "955725c0-f403-4abd-b4fc-0c88d41f6681",
+          "targetVertexId": "907bc0ce-10c5-4a4e-8fa9-b3bf78a191cc",
           "name": "e_logout",
-          "id": "253e2583-2687-4398-84fb-a9340404eeb5",
-          "sourceVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42"
+          "id": "33a5f420-c847-4888-b3ef-788e20eb7f4d",
+          "sourceVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9"
         },
         {
-          "targetVertexId": "9f01cc69-17a8-467e-955a-fcb02af6c83c",
+          "targetVertexId": "ade9e283-07fb-4868-83d5-accf00013b92",
           "name": "e_goToSettingsPage",
-          "id": "9a198db7-76c4-45be-8882-88691ecab6e5",
-          "sourceVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42"
+          "id": "f920deb5-71b0-47ab-96ba-6ebc9afce251",
+          "sourceVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9"
         },
         {
-          "targetVertexId": "20a8000a-9b57-4b9e-b847-ab29f04e7b02",
+          "targetVertexId": "78704a7f-f934-42f7-947e-a7bca6233653",
           "name": "e_goToSigningMultipleFilesPage",
-          "id": "a4de3d47-fa3f-431c-8f11-39a5363db05c",
-          "sourceVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42"
+          "id": "7b62e9a9-e761-45ab-aa7d-c6b6ed1e8835",
+          "sourceVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9"
         },
         {
-          "targetVertexId": "b5c16ae4-2f86-4a5e-97d4-cf843553e91b",
+          "targetVertexId": "05d541d9-44bf-4985-8d66-16e84f3cd9d6",
           "name": "e_goToSigningProcessesPage",
-          "id": "890cc898-15b0-410e-b416-7ce08595f233",
-          "sourceVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42"
+          "id": "0c59af61-2a3f-4d20-b22f-e3488d816d03",
+          "sourceVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9"
         },
         {
-          "targetVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42",
+          "targetVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9",
           "name": "e_goToFilePage",
-          "id": "4617babe-4797-4452-a135-0d02feee435e",
-          "sourceVertexId": "9f01cc69-17a8-467e-955a-fcb02af6c83c"
+          "id": "5f693003-21b3-42fc-b3d2-d7d24cc5a411",
+          "sourceVertexId": "ade9e283-07fb-4868-83d5-accf00013b92"
         },
         {
-          "targetVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42",
+          "targetVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9",
           "name": "e_goToFilePage",
-          "id": "a711de75-5609-4228-b4b8-258d9a5f80a9",
-          "sourceVertexId": "20a8000a-9b57-4b9e-b847-ab29f04e7b02"
+          "id": "9aa55574-5675-4124-9d4e-6980aa6aae32",
+          "sourceVertexId": "78704a7f-f934-42f7-947e-a7bca6233653"
         },
         {
-          "targetVertexId": "5de35afd-5b3e-4328-8dd8-e214fef21c42",
+          "targetVertexId": "45474c97-9e85-44e5-bffc-cb7b0ce7afb9",
           "name": "e_goToFilePage",
-          "id": "31b7b246-f385-4bc1-9496-4eb75944ee1b",
-          "sourceVertexId": "b5c16ae4-2f86-4a5e-97d4-cf843553e91b"
+          "id": "565f86b2-f80e-47a6-afaf-24e906f65ffc",
+          "sourceVertexId": "05d541d9-44bf-4985-8d66-16e84f3cd9d6"
         }
       ],
       "name": "Complex",
       "generator": "quick_random(edge_coverage(100))",
-      "id": "2c909440-3f74-4ac5-a8e7-69e704cd07bc",
+      "id": "28d31c38-ba42-4f6e-b08d-f28ad7aa05fc",
       "actions": [
         "fpFormFilled = false;",
         "loginFormFilled = false;",
         "nuModalChecked = false;"
       ],
-      "startElementId": "f5ff0027-2039-4e91-8b70-0a2be603a411"
+      "startElementId": "d0173f18-adb0-46b1-bacb-e3a0c1e7cd5f"
     }
   ],
-  "selectedElementId": "f5ff0027-2039-4e91-8b70-0a2be603a411",
+  "selectedElementId": "d0173f18-adb0-46b1-bacb-e3a0c1e7cd5f",
   "selectedModelIndex": 0
 }
