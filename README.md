@@ -35,6 +35,11 @@ className.tab.active=
 
 # HTML element IDs
 id.logo=
+id.menu.user=
+id.menu.user.logout=
+id.menu.user.settings=
+id.menu.user.signingMultipleFiles=
+id.menu.user.signingProcesses=
 id.modal.forgottenPassword.email=
 id.modal.forgottenPassword.submit=
 id.modal.notifyUser.checkbox=
@@ -47,11 +52,6 @@ id.page.login.submit=
 id.page.settings.back=
 id.page.signingMultipleFiles.back=
 id.page.signingProcesses.back=
-id.menu.user=
-id.menu.user.logout=
-id.menu.user.settings=
-id.menu.user.signingMultipleFiles=
-id.menu.user.signingProcesses=
 
 # XPath routes
 xpath.modal.close=

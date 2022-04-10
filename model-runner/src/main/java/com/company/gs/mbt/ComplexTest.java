@@ -3,7 +3,6 @@ package com.company.gs.mbt;
 import com.company.gs.mbt.util.WebDriverHandler;
 import com.company.gs.mbt.util.WebDriverUtil;
 import com.company.gs.properties.GSProperties;
-import com.company.gs.properties.util.ClassName;
 import com.company.gs.properties.util.Data;
 import com.company.gs.properties.util.Id;
 import com.company.gs.properties.util.Url;
