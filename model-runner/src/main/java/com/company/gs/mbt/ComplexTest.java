@@ -94,6 +94,12 @@ public class ComplexTest extends ExecutionContext implements Complex {
     }
 
     @Override
+    public void e_uploadFile() {
+        WebDriverUtil.clickOnById(driver, GSProperties.get(Id.FILE_PAGE_NEW_CONTAINER));
+        WebDriverUtil.sendKeysById(driver, GSProperties.get(Id.FILE_PAGE_UPLOAD), GSProperties.get(Data.FILE_PDF));
+    }
+
+    @Override
     public void e_goToFilePage() {
         WebDriverUtil.clickOnById(driver, GSProperties.get(Id.LOGO));
     }

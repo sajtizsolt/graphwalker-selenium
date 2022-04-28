@@ -140,6 +140,10 @@ public class WebDriverUtil {
         driver.findElement(By.xpath(xpath)).sendKeys(text);
     }
 
+    public static void sendKeysById(WebDriver driver, String id, String text) {
+        driver.findElement(By.id(id)).sendKeys(text);
+    }
+
     public static boolean isAntTabActive(WebDriver driver, String xpath) {
         waitForPresenceByXPath(driver, xpath);
 

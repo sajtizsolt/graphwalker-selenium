@@ -14,6 +14,8 @@ public class Id {
 
     public static final String FILE_PAGE_NEW_CONTAINER = "id.page.file.new.container";
 
+    public static final String FILE_PAGE_UPLOAD = "id.page.file.new.container.upload";
+
     public static final String LOGIN_PAGE_FP_BUTTON = "id.page.login.forgottenPassword";
 
     public static final String LOGIN_PAGE_EMAIL = "id.page.login.email";

@@ -45,6 +45,7 @@ id.modal.forgottenPassword.submit=
 id.modal.notifyUser.checkbox=
 id.modal.notifyUser.submit=
 id.page.file.new.container=
+id.page.file.new.container.upload=
 id.page.login.forgottenPassword=
 id.page.login.email=
 id.page.login.password=
@@ -69,6 +70,7 @@ url.signingMultipleFiles=
 url.signingProcesses=
 
 # Data
+data.file.pdf=
 data.user.email=
 data.user.password=
 data.user.newPassword=

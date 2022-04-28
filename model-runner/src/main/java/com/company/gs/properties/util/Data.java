@@ -8,4 +8,6 @@ public class Data {
 
     public static final String USER_NEW_PASSWORD = "data.user.newPassword";
 
+    public static final String FILE_PDF = "data.file.pdf";
+
 }

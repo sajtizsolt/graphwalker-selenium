@@ -187,6 +187,12 @@ public class ComplexModelGenerator {
             .addAction(clearCPForm)
             .setGuard(cpFormIsFilled);
 
+        Edge e_uploadFile = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_uploadFile")
+            .setSourceVertex(v_onFilePage)
+            .setTargetVertex(v_onFilePage);
+
         return new Model()
             .setId(UUID.randomUUID().toString())
             .setName("Complex")
@@ -219,7 +225,8 @@ public class ComplexModelGenerator {
             .addEdge(e_goToFilePageFromSigningMultipleFilesPage)
             .addEdge(e_goToFilePageFromSigningProcessesPage)
             .addEdge(e_fillChangePasswordForm)
-            .addEdge(e_submitChangePasswordForm);
+            .addEdge(e_submitChangePasswordForm)
+            .addEdge(e_uploadFile);
     }
 
 }
