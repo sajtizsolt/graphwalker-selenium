@@ -50,6 +50,10 @@ id.page.login.forgottenPassword=
 id.page.login.email=
 id.page.login.password=
 id.page.login.submit=
+id.page.registration.email=
+id.page.registration.password=
+id.page.registration.passwordAgain=
+id.page.registration.submit=
 id.page.settings.back=
 id.page.settings.password.current=
 id.page.settings.password.new=
@@ -61,10 +65,15 @@ id.page.signingProcesses.back=
 # XPath routes
 xpath.modal.close=
 xpath.page.login.loginTab=
+xpath.page.login.registrationTab=
+xpath.page.registration.tac=
+xpath.page.registration.pp=
 
 # URLs
+url.confirmRegistration=
 url.file=
 url.login=
+url.registration=
 url.settings=
 url.signingMultipleFiles=
 url.signingProcesses=
@@ -74,6 +83,8 @@ data.file.pdf=
 data.user.email=
 data.user.password=
 data.user.newPassword=
+data.newUser.email=
+data.newUser.password=
 ```
 
 ### Executing with Maven
