@@ -31,6 +31,40 @@ public class ComplexTest extends ExecutionContext implements Complex {
     }
 
     @Override
+    public void e_goToRegistrationPage() {
+        WebDriverUtil.clickOnByXPath(driver, GSProperties.get(XPath.REGISTRATION_TAB));
+    }
+
+    @Override
+    public void v_onRegistrationPage() {
+        WebDriverUtil.waitForUrl(driver, GSProperties.get(Url.REGISTRATION_PAGE));
+
+        assertEquals(GSProperties.get(Url.REGISTRATION_PAGE), driver.getCurrentUrl());
+        assertTrue(WebDriverUtil.isAntTabActive(driver, GSProperties.get(XPath.REGISTRATION_TAB)));
+    }
+
+    @Override
+    public void e_fillRegistrationForm() {
+        WebDriverUtil.typeById(driver, GSProperties.get(Id.REGISTRATION_PAGE_EMAIL), GSProperties.get(Data.NEW_USER_EMAIL));
+        WebDriverUtil.typeById(driver, GSProperties.get(Id.REGISTRATION_PAGE_PASSWORD), GSProperties.get(Data.NEW_USER_PASSWORD));
+        WebDriverUtil.typeById(driver, GSProperties.get(Id.REGISTRATION_PAGE_PASSWORD_AGAIN), GSProperties.get(Data.NEW_USER_PASSWORD));
+        WebDriverUtil.clickOnByXPath(driver, GSProperties.get(XPath.REGISTRATION_PAGE_TAC));
+        WebDriverUtil.clickOnByXPath(driver, GSProperties.get(XPath.REGISTRATION_PAGE_PP));
+    }
+
+    @Override
+    public void e_submitRegistrationForm() {
+        WebDriverUtil.clickOnById(driver, GSProperties.get(Id.REGISTRATION_PAGE_SUBMIT));
+    }
+
+    @Override
+    public void v_onSuccessfulRegistrationPage() {
+        WebDriverUtil.waitForUrl(driver, GSProperties.get(Url.CONFIRM_REGISTRATION));
+
+        assertEquals(GSProperties.get(Url.CONFIRM_REGISTRATION), driver.getCurrentUrl());
+    }
+
+    @Override
     public void v_onLoginPage() {
         WebDriverUtil.waitForUrl(driver, GSProperties.get(Url.LOGIN_PAGE));
 
@@ -144,6 +178,11 @@ public class ComplexTest extends ExecutionContext implements Complex {
         WebDriverUtil.clickOnById(driver, GSProperties.get(Id.SETTINGS_PAGE_CPW_SUBMIT));
 
         GSProperties.swap(Data.USER_PASSWORD, Data.USER_NEW_PASSWORD);
+    }
+
+    @Override
+    public void e_goToLoginPage() {
+        WebDriverUtil.clickOnById(driver, GSProperties.get(Id.LOGO));
     }
 
     @Override

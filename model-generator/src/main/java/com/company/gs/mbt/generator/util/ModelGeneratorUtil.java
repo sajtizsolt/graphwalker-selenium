@@ -11,25 +11,14 @@ public class ModelGeneratorUtil {
         for (int i = 0; i < guards.length; ++i) {
             sb.append("(");
             sb.append(guards[i].getScript());
-            sb.append(") ");
+            sb.append(")");
 
             if (i != guards.length - 1) {
-                sb.append("&& ");
+                sb.append(" && ");
             }
         }
 
         return new Guard(sb.toString());
-    }
-
-    public static Action mergeActions(Action... actions) {
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < actions.length; ++i) {
-            sb.append(actions[i].getScript());
-            sb.append("\n");
-        }
-
-        return new Action(sb.toString());
     }
 
 }

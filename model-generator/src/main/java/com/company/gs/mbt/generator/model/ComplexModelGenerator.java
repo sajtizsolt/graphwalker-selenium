@@ -15,19 +15,26 @@ public class ComplexModelGenerator {
         Action fillFPForm = new Action("fpFormFilled = true;");
         Action clearLoginForm = new Action("loginFormFilled = false;");
         Action fillLoginForm = new Action("loginFormFilled = true;");
+        Action clearRegistrationForm = new Action("registrationFormFilled = false;");
+        Action fillRegistrationForm = new Action("registrationFormFilled = true;");
         Action uncheckNUModal = new Action("nuModalChecked = false;");
         Action checkNUModal = new Action("nuModalChecked = true;");
         Action clearCPForm = new Action("cpFormFilled = false;");
         Action fillCPForm = new Action("cpFormFilled = true;");
+        Action unregister = new Action("registrationDone = false;");
+        Action register = new Action("registrationDone = true;");
 
         Guard fpFormIsFilled = new Guard("fpFormFilled == true");
         Guard fpFormIsNotFilled = new Guard("fpFormFilled == false");
         Guard loginFormIsFilled = new Guard("loginFormFilled == true");
         Guard loginFormIsNotFilled = new Guard("loginFormFilled == false");
+        Guard registrationFormIsFilled = new Guard("registrationFormFilled == true");
+        Guard registrationFormIsNotFilled = new Guard("registrationFormFilled == false");
         Guard nuModalIsChecked = new Guard("nuModalChecked == true");
         Guard nuModalIsUnchecked = new Guard("nuModalChecked == false");
         Guard cpFormIsFilled = new Guard("cpFormFilled == true");
         Guard cpFormIsNotFilled = new Guard("cpFormFilled == false");
+        Guard isNotRegistered = new Guard("registrationDone == false");
 
         Vertex v_browserNotRunning = new Vertex()
             .setId(UUID.randomUUID().toString())
@@ -36,6 +43,14 @@ public class ComplexModelGenerator {
         Vertex v_onLoginPage = new Vertex()
             .setId(UUID.randomUUID().toString())
             .setName("v_onLoginPage");
+
+        Vertex v_onRegistrationPage = new Vertex()
+            .setId(UUID.randomUUID().toString())
+            .setName("v_onRegistrationPage");
+
+        Vertex v_onSuccessfulRegistrationPage = new Vertex()
+            .setId(UUID.randomUUID().toString())
+            .setName("v_onSuccessfulRegistrationPage");
 
         Vertex v_onFPModal = new Vertex()
             .setId(UUID.randomUUID().toString())
@@ -121,6 +136,37 @@ public class ComplexModelGenerator {
             .addAction(clearLoginForm)
             .setGuard(ModelGeneratorUtil.conjunctGuards(loginFormIsFilled, nuModalIsChecked));
 
+        Edge e_goToRegistrationPage = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_goToRegistrationPage")
+            .setSourceVertex(v_onLoginPage)
+            .setTargetVertex(v_onRegistrationPage);
+
+        Edge e_fillRegistrationForm = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_fillRegistrationForm")
+            .setSourceVertex(v_onRegistrationPage)
+            .setTargetVertex(v_onRegistrationPage)
+            .addAction(fillRegistrationForm)
+            .setGuard(registrationFormIsNotFilled);
+
+        Edge e_submitRegistrationForm = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_submitRegistrationForm")
+            .setSourceVertex(v_onRegistrationPage)
+            .setTargetVertex(v_onSuccessfulRegistrationPage)
+            .addAction(clearRegistrationForm)
+            .addAction(register)
+            .setGuard(ModelGeneratorUtil.conjunctGuards(registrationFormIsFilled, isNotRegistered));
+
+        Edge e_goToLoginPageFromSuccessfulRegistrationPage = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_goToLoginPage")
+            .setSourceVertex(v_onSuccessfulRegistrationPage)
+            .setTargetVertex(v_onLoginPage)
+            .addAction(clearRegistrationForm)
+            .addAction(clearLoginForm);
+
         Edge e_closeNotifyModal = new Edge()
             .setId(UUID.randomUUID().toString())
             .setName("e_closeNotifyModal")
@@ -196,8 +242,10 @@ public class ComplexModelGenerator {
         return new Model()
             .setId(UUID.randomUUID().toString())
             .setName("Complex")
+            .addAction(unregister)
             .addAction(clearFPForm)
             .addAction(clearLoginForm)
+            .addAction(clearRegistrationForm)
             .addAction(uncheckNUModal)
             .addAction(clearCPForm)
             .addVertex(v_browserNotRunning)
@@ -208,6 +256,8 @@ public class ComplexModelGenerator {
             .addVertex(v_onSettingsPage)
             .addVertex(v_onSigningMultipleFilesPage)
             .addVertex(v_onSigningProcessesPage)
+            .addVertex(v_onRegistrationPage)
+            .addVertex(v_onSuccessfulRegistrationPage)
             .addEdge(e_startBrowserAndGoToLoginPage)
             .addEdge(e_clickOnFPLink)
             .addEdge(e_closeFPModal)
@@ -226,7 +276,11 @@ public class ComplexModelGenerator {
             .addEdge(e_goToFilePageFromSigningProcessesPage)
             .addEdge(e_fillChangePasswordForm)
             .addEdge(e_submitChangePasswordForm)
-            .addEdge(e_uploadFile);
+            .addEdge(e_uploadFile)
+            .addEdge(e_goToRegistrationPage)
+            .addEdge(e_fillRegistrationForm)
+            .addEdge(e_submitRegistrationForm)
+            .addEdge(e_goToLoginPageFromSuccessfulRegistrationPage);
     }
 
 }

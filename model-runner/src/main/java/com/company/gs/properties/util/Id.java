@@ -24,6 +24,14 @@ public class Id {
 
     public static final String LOGIN_PAGE_SUBMIT = "id.page.login.submit";
 
+    public static final String REGISTRATION_PAGE_EMAIL = "id.page.registration.email";
+
+    public static final String REGISTRATION_PAGE_PASSWORD = "id.page.registration.password";
+
+    public static final String REGISTRATION_PAGE_PASSWORD_AGAIN = "id.page.registration.passwordAgain";
+
+    public static final String REGISTRATION_PAGE_SUBMIT = "id.page.registration.submit";
+
     public static final String SETTINGS_PAGE_BACK = "id.page.settings.back";
 
     public static final String SETTINGS_PAGE_CPW_CURRENT = "id.page.settings.password.current";
