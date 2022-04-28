@@ -6,4 +6,6 @@ public class Data {
 
     public static final String USER_PASSWORD = "data.user.password";
 
+    public static final String USER_NEW_PASSWORD = "data.user.newPassword";
+
 }

@@ -127,6 +127,20 @@ public class ComplexTest extends ExecutionContext implements Complex {
     }
 
     @Override
+    public void e_fillChangePasswordForm() {
+        WebDriverUtil.typeById(driver, GSProperties.get(Id.SETTINGS_PAGE_CPW_CURRENT), GSProperties.get(Data.USER_PASSWORD));
+        WebDriverUtil.typeById(driver, GSProperties.get(Id.SETTINGS_PAGE_CPW_NEW), GSProperties.get(Data.USER_NEW_PASSWORD));
+        WebDriverUtil.typeById(driver, GSProperties.get(Id.SETTINGS_PAGE_CPW_NEW_AGAIN), GSProperties.get(Data.USER_NEW_PASSWORD));
+    }
+
+    @Override
+    public void e_submitChangePasswordForm() {
+        WebDriverUtil.clickOnById(driver, GSProperties.get(Id.SETTINGS_PAGE_CPW_SUBMIT));
+
+        GSProperties.swap(Data.USER_PASSWORD, Data.USER_NEW_PASSWORD);
+    }
+
+    @Override
     public void e_goToSigningMultipleFilesPage() {
         WebDriverUtil.hoverOverById(driver, GSProperties.get(Id.USER_MENU));
         WebDriverUtil.clickOnById(driver, GSProperties.get(Id.USER_MENU_SMF));

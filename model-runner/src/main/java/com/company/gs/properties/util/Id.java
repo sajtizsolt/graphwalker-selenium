@@ -24,6 +24,14 @@ public class Id {
 
     public static final String SETTINGS_PAGE_BACK = "id.page.settings.back";
 
+    public static final String SETTINGS_PAGE_CPW_CURRENT = "id.page.settings.password.current";
+
+    public static final String SETTINGS_PAGE_CPW_NEW = "id.page.settings.password.new";
+
+    public static final String SETTINGS_PAGE_CPW_NEW_AGAIN = "id.page.settings.password.newAgain";
+
+    public static final String SETTINGS_PAGE_CPW_SUBMIT = "id.page.settings.password.submit";
+
     public static final String SMF_PAGE_BACK = "id.page.signingMultipleFiles.back";
 
     public static final String SP_PAGE_BACK = "id.page.signingProcesses.back";

@@ -17,6 +17,8 @@ public class ComplexModelGenerator {
         Action fillLoginForm = new Action("loginFormFilled = true;");
         Action uncheckNUModal = new Action("nuModalChecked = false;");
         Action checkNUModal = new Action("nuModalChecked = true;");
+        Action clearCPForm = new Action("cpFormFilled = false;");
+        Action fillCPForm = new Action("cpFormFilled = true;");
 
         Guard fpFormIsFilled = new Guard("fpFormFilled == true");
         Guard fpFormIsNotFilled = new Guard("fpFormFilled == false");
@@ -24,6 +26,8 @@ public class ComplexModelGenerator {
         Guard loginFormIsNotFilled = new Guard("loginFormFilled == false");
         Guard nuModalIsChecked = new Guard("nuModalChecked == true");
         Guard nuModalIsUnchecked = new Guard("nuModalChecked == false");
+        Guard cpFormIsFilled = new Guard("cpFormFilled == true");
+        Guard cpFormIsNotFilled = new Guard("cpFormFilled == false");
 
         Vertex v_browserNotRunning = new Vertex()
             .setId(UUID.randomUUID().toString())
@@ -152,7 +156,8 @@ public class ComplexModelGenerator {
             .setId(UUID.randomUUID().toString())
             .setName("e_goToFilePage")
             .setSourceVertex(v_onSettingsPage)
-            .setTargetVertex(v_onFilePage);
+            .setTargetVertex(v_onFilePage)
+            .addAction(clearCPForm);
 
         Edge e_goToFilePageFromSigningMultipleFilesPage = new Edge()
             .setId(UUID.randomUUID().toString())
@@ -166,12 +171,29 @@ public class ComplexModelGenerator {
             .setSourceVertex(v_onSigningProcessesPage)
             .setTargetVertex(v_onFilePage);
 
+        Edge e_fillChangePasswordForm = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_fillChangePasswordForm")
+            .setSourceVertex(v_onSettingsPage)
+            .setTargetVertex(v_onSettingsPage)
+            .addAction(fillCPForm)
+            .setGuard(cpFormIsNotFilled);
+
+        Edge e_submitChangePasswordForm = new Edge()
+            .setId(UUID.randomUUID().toString())
+            .setName("e_submitChangePasswordForm")
+            .setSourceVertex(v_onSettingsPage)
+            .setTargetVertex(v_onSettingsPage)
+            .addAction(clearCPForm)
+            .setGuard(cpFormIsFilled);
+
         return new Model()
             .setId(UUID.randomUUID().toString())
             .setName("Complex")
             .addAction(clearFPForm)
             .addAction(clearLoginForm)
             .addAction(uncheckNUModal)
+            .addAction(clearCPForm)
             .addVertex(v_browserNotRunning)
             .addVertex(v_onLoginPage)
             .addVertex(v_onFPModal)
@@ -195,7 +217,9 @@ public class ComplexModelGenerator {
             .addEdge(e_goToSigningProcessesPage)
             .addEdge(e_goToFilePageFromSettingsPage)
             .addEdge(e_goToFilePageFromSigningMultipleFilesPage)
-            .addEdge(e_goToFilePageFromSigningProcessesPage);
+            .addEdge(e_goToFilePageFromSigningProcessesPage)
+            .addEdge(e_fillChangePasswordForm)
+            .addEdge(e_submitChangePasswordForm);
     }
 
 }

@@ -50,6 +50,10 @@ id.page.login.email=
 id.page.login.password=
 id.page.login.submit=
 id.page.settings.back=
+id.page.settings.password.current=
+id.page.settings.password.new=
+id.page.settings.password.newAgain=
+id.page.settings.password.submit=
 id.page.signingMultipleFiles.back=
 id.page.signingProcesses.back=
 
@@ -67,12 +71,17 @@ url.signingProcesses=
 # Data
 data.user.email=
 data.user.password=
+data.user.newPassword=
 ```
 
 ### Executing with Maven
 
 ```shell
-$ cd modal-runner
+$ cd model-generator
+$ mvn clean install
+$ java -jar target\model-runner-0.2.jar
+$ cd ..
+$ cd model-runner
 $ mvn clean graphwalker:test
 ```
 
